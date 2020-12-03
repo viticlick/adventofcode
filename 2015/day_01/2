@@ -1,0 +1,15 @@
+
+def elevator(text):
+    open_parenthesis = text.count('(')
+    close_parenthesis = text.count(')')
+    return open_parenthesis - close_parenthesis
+
+def basement(text):
+    current_position = 0;
+    for position, value in text.split():
+        if value == '(':
+            current_position = current_position + 1
+        if value == ')':
+            current_position = current_position - 1
+        if current_position == -1:
+            return position + 1
